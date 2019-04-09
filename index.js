@@ -285,6 +285,7 @@ Keycloak.prototype.deauthenticated = function (request) {
  * application would prefer to render a fancy template.
  */
 Keycloak.prototype.accessDenied = function (request, response) {
+  console.log("**--ACCESS DENIED 403--")
   response.status(403);
   response.end('Access denied');
 };

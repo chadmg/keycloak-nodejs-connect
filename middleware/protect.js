@@ -49,6 +49,7 @@ module.exports = function (keycloak, spec) {
   }
 
   return function protect (request, response, next) {
+    console.log("** KAUTH:", request.kauth)
     if (request.kauth && request.kauth.grant) {
       if (!guard || guard(request.kauth.grant.access_token, request, response)) {
         return next();
